@@ -8,6 +8,7 @@ var $timeHeader = document.querySelector('#time-header')
 var $resultHeader = document.querySelector('#result-header')
 var $gameTime = document.querySelector('#game-time')
 
+var colors = ['red','blue','green','yellow','ping']
 var score = 0
 /*стваим обработчик событий на кнопку старт*/
 $start.addEventListener('click', startGame)
@@ -84,9 +85,10 @@ function rendorBox () {
     //функции getBoundingClientRect с помощью которой определяем размеры поля game
     let maxTop = gameSize.height - boxSize
     let maxLeft = gameSize.width - boxSize
+    let randomColorsIndex = getRandom(0,colors.length)
     box.style.height = box.style.width = boxSize +'px'
     box.style.position = 'absolute'
-    box.style.backgroundColor = '#144122'
+    box.style.backgroundColor =colors[randomColorsIndex]
     box.style.top = getRandom(0, maxTop) + 'px'
     box.style.left = getRandom(0, maxLeft) + 'px'
     box.style.cursor = 'pointer'
