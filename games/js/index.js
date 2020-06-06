@@ -6,23 +6,31 @@ var $result = document.querySelector('#result')
 var isGameStarted = false
 var $timeHeader = document.querySelector('#time-header')
 var $resultHeader = document.querySelector('#result-header')
+var $gameTime = document.querySelector('#game-time')
 
 var score = 0
 /*стваим обработчик событий на кнопку старт*/
 $start.addEventListener('click', startGame)
 /*Ставим прослушку события*/
 $game.addEventListener('click', hedleBoxClick)
+$gameTime.addEventListener('input', setGameTime)
 
+function show($el){// функция показывает  контент
+    $el.classList.remove('hide')
+}
+function hide($el){ //функция скрывает   контент
+    $el.classList.add('hide')
+}
 /*создаем функцию startGame*/
 /* запуск игры*/
 function startGame() {
     score = 0
     setGameTime()
-    $timeHeader.classList.remove('hide')
-    $resultHeader.classList.add('hide')
+    $gameTime.removeAttribute('disabled')
+
     isGameStarted = true
     $game.style.backgroundColor = '#fff'
-    $start.classList.add('hide')
+    hide($start)
     /*Создаем интервал */
     let interval = setInterval(function(){
         let time = parseFloat($time.textContent)
@@ -38,8 +46,10 @@ function startGame() {
 }
 /* Создаем функции*/
 function setGameTime(){
-    let time = 5
+    let time = +$gameTime.value
     $time.textContent = time.toFixed(1)
+    show($timeHeader)
+    hide($resultHeader)
 }
 function setGameScore(){
     $result.textContent = score.toString()
@@ -48,11 +58,11 @@ function setGameScore(){
 function endGame(){
     isGameStarted = false
     setGameScore()
-    $start.classList.remove('hide')
+    show($start)
     $game.innerHTML = ''
     $game.style.backgroundColor = '#ccc'
-    $timeHeader.classList.add('hide')
-    $resultHeader.classList.remove('hide')
+    hide($timeHeader)
+   show($resultHeader)
 
 }
 
