@@ -19,3 +19,4 @@ document.querySelector('#prompt').addEventListener('click', function(event) {
         alert( 'Hello ' + userName)
     }else prompt('Our name???')
 })
+
