@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="AUTHOR" CONTENT="Радмир">
+	<META NAME="CREATED" CONTENT="20200604;33700000000000">
+	<META NAME="CHANGEDBY" CONTENT="Радмир">
+	<META NAME="CHANGED" CONTENT="20200604;190400000000000">
+	<META NAME="AppVersion" CONTENT="16.0000">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 1.18in; margin-right: 0.59in; margin-top: 0.79in; margin-bottom: 0.79in }
+		P { margin-bottom: 0.08in; direction: ltr; widows: 2; orphans: 2 }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ru-RU" DIR="LTR">
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=4><B>Объекты и
+функции.</B></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Свойства
+объекта можно писать через точку или в
+квадратных скобках с кавычками.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Проверить
+свойство объекта можно через hasOwnProperty
+(возвращает </FONT><FONT SIZE=3><SPAN LANG="en-US">Boolean</SPAN></FONT><FONT SIZE=3>).</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>У объекта есть
+свои методы, которые хранятся в __</FONT><FONT SIZE=3><SPAN LANG="en-US">proto</SPAN></FONT><FONT SIZE=3>__
+(ссылка на прототип родителя).</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Глобальный
+объект </FONT><FONT SIZE=3><SPAN LANG="en-US">Object</SPAN></FONT><FONT SIZE=3>
+является функцией, но и у него есть
+прототип.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Чтобы проверить
+это, в консоли нужно написать
+</FONT><FONT SIZE=3><SPAN LANG="en-US">Object</SPAN></FONT><FONT SIZE=3>.</FONT><FONT SIZE=3><SPAN LANG="en-US">prototype</SPAN></FONT><FONT SIZE=3>.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3><SPAN LANG="en-US">car.__proto__
+=== Object.prototype (true)</SPAN></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Массив
+наследуется от класса </FONT><FONT SIZE=3><SPAN LANG="en-US">Array</SPAN></FONT><FONT SIZE=3>,
+но тот, в свою очередь, наследуется от
+</FONT><FONT SIZE=3><SPAN LANG="en-US">Object</SPAN></FONT><FONT SIZE=3>.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>[] =&gt; </FONT><FONT SIZE=3><SPAN LANG="en-US">Array</SPAN></FONT><FONT SIZE=3>
+=&gt; </FONT><FONT SIZE=3><SPAN LANG="en-US">Object</SPAN></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3><SPAN STYLE="background: #ffff00">Создание
+объекта.</SPAN></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3><SPAN LANG="en-US">let</SPAN></FONT><FONT SIZE=3>
+</FONT><FONT SIZE=3><SPAN LANG="en-US">car</SPAN></FONT><FONT SIZE=3>
+= {}; - один вариант</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>В </FONT><FONT SIZE=3><SPAN LANG="en-US">ES</SPAN></FONT><FONT SIZE=3>5
+аналогом классов были функции с большой
+буквы:</FONT></P>
+<P STYLE="margin-bottom: 0in; background: #212121; line-height: 100%">
+<FONT COLOR="#c792ea"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US"><I>function
+</I></SPAN></FONT></FONT></FONT><FONT COLOR="#ffcb6b"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US"><I>Car</I></SPAN></FONT></FONT></FONT><FONT COLOR="#89ddff"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">(</SPAN></FONT></FONT></FONT><FONT COLOR="#f78c6c"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">name</SPAN></FONT></FONT></FONT><FONT COLOR="#89ddff"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">,
+</SPAN></FONT></FONT></FONT><FONT COLOR="#f78c6c"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">year</SPAN></FONT></FONT></FONT><FONT COLOR="#89ddff"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">,)
+{<BR><BR>}<BR><BR></SPAN></FONT></FONT></FONT><FONT COLOR="#c792ea"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US"><I>let
+</I></SPAN></FONT></FONT></FONT><FONT COLOR="#eeffff"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">ford
+</SPAN></FONT></FONT></FONT><FONT COLOR="#89ddff"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">=
+</SPAN></FONT></FONT></FONT><FONT COLOR="#c792ea"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US"><I>new
+</I></SPAN></FONT></FONT></FONT><FONT COLOR="#ffcb6b"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US"><I>Car</I></SPAN></FONT></FONT></FONT><FONT COLOR="#89ddff"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">(</SPAN></FONT></FONT></FONT><FONT COLOR="#c3e88d"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">'Ford'</SPAN></FONT></FONT></FONT><FONT COLOR="#89ddff"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">,
+</SPAN></FONT></FONT></FONT><FONT COLOR="#f78c6c"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">2015</SPAN></FONT></FONT></FONT><FONT COLOR="#89ddff"><FONT FACE="JetBrains Mono, serif"><FONT SIZE=2><SPAN LANG="en-US">);</SPAN></FONT></FONT></FONT></P>
+<P LANG="en-US" STYLE="margin-bottom: 0.11in"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Если мы выведем
+в консоль созданную переменную мы
+получим объект, первым прототипом
+которого будет наша функция-класс:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_1af7525f.png" NAME="Рисунок 1" ALIGN=BOTTOM WIDTH=239 HEIGHT=68 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>В функции-классе
+мы обращаемся к свойству будущего
+экземпляра класса с помощью ключевого
+слова </FONT><FONT SIZE=3><SPAN LANG="en-US">this</SPAN></FONT><FONT SIZE=3>.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_67632ddc.png" NAME="Рисунок 2" ALIGN=BOTTOM WIDTH=267 HEIGHT=137 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Оператор </FONT><FONT SIZE=3><SPAN LANG="en-US">new</SPAN></FONT><FONT SIZE=3>,
+по сути, возвращает ключевое слово </FONT><FONT SIZE=3><SPAN LANG="en-US">this</SPAN></FONT><FONT SIZE=3>.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>В обращении к
+прототипу мы можем устанавливать методы
+класса-функции для всех последующих
+экземпляров класса:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_8d13842a.png" NAME="Рисунок 3" ALIGN=BOTTOM WIDTH=343 HEIGHT=56 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Поэтому,
+отображая экземпляр в консоли, мы
+получаем в прототипе метод функции-класса
+несмотря на то, что мы его ещё не
+использовали:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_af0d30ae.png" NAME="Рисунок 5" ALIGN=BOTTOM WIDTH=233 HEIGHT=106 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Но, конечно
+же, мы можем использовать методы класса
+для экземпляров:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_46b89c62.png" NAME="Рисунок 6" ALIGN=BOTTOM WIDTH=121 HEIGHT=40 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>В классе для
+всех экземпляров можно задавать поля
+по умолчанию:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_3d2f9ac8.png" NAME="Рисунок 7" ALIGN=BOTTOM WIDTH=267 HEIGHT=29 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Мы можем
+переопределять дефолтные значения:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_3c0e82b2.png" NAME="Рисунок 8" ALIGN=BOTTOM WIDTH=176 HEIGHT=25 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Объекты можно
+создавать через</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_bfa7803a.png" NAME="Рисунок 9" ALIGN=BOTTOM WIDTH=262 HEIGHT=28 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Первый параметр
+отвечает за прототип этого объекта.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Второй параметр
+описывает свойства данного объекта (в
+нашем случае – “</FONT><FONT SIZE=3><SPAN LANG="en-US">ford</SPAN></FONT><FONT SIZE=3>”).</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Поля (свойства)
+нашего объекта прописываются особым
+образом:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_620ae216.png" NAME="Рисунок 10" ALIGN=BOTTOM WIDTH=333 HEIGHT=142 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Можно прописывать
+и прототипы объекта:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_ac1a0101.png" NAME="Рисунок 11" ALIGN=BOTTOM WIDTH=338 HEIGHT=135 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Существует
+дескриптор свойств (о них – в официальной
+документации). Одно мы уже использовали
+– </FONT><FONT SIZE=3><SPAN LANG="en-US">value</SPAN></FONT><FONT SIZE=3>.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>При перечислении
+свойств, если мы хотим их использовать,
+нужно ставить в дескрипторе </FONT><FONT SIZE=3><SPAN LANG="en-US">enumerable</SPAN></FONT><FONT SIZE=3>:
+</FONT><FONT SIZE=3><SPAN LANG="en-US">true</SPAN></FONT><FONT SIZE=3>.
+В консоли свойство подсветится ярким
+цветом.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3><SPAN LANG="en-US">Configurable</SPAN></FONT><FONT SIZE=3>
+отвечает за удаление, </FONT><FONT SIZE=3><SPAN LANG="en-US">writable</SPAN></FONT><FONT SIZE=3>
+– за возможность изменять значения
+свойства.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Для установления
+и получения свойства мы используем
+дескрипторы </FONT><FONT SIZE=3><SPAN LANG="en-US">get</SPAN></FONT><FONT SIZE=3>
+и </FONT><FONT SIZE=3><SPAN LANG="en-US">set</SPAN></FONT><FONT SIZE=3>.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Когда мы будем
+обращаться к полю, геттер будет нам
+что-то возвращать.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Можно создавать
+свойство с помощью метода </FONT><FONT SIZE=3><SPAN LANG="en-US">Object</SPAN></FONT><FONT SIZE=3>:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_bd2f281a.png" NAME="Рисунок 12" ALIGN=BOTTOM WIDTH=531 HEIGHT=151 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Пробежаться
+по всем ключам можно с помощью </FONT><FONT SIZE=3><SPAN LANG="en-US">for</SPAN></FONT><FONT SIZE=3>.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_d7289a58.png" NAME="Рисунок 13" ALIGN=BOTTOM WIDTH=249 HEIGHT=71 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Мы можем не
+использовать в проверке методы и поля
+прототипа. Поставим условие на собственные
+свойства.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_3987194e.png" NAME="Рисунок 14" ALIGN=BOTTOM WIDTH=298 HEIGHT=104 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Можем вывести
+и значения:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_a958e88e.png" NAME="Рисунок 15" ALIGN=BOTTOM WIDTH=344 HEIGHT=112 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Второй способ
+получения ключей через метод </FONT><FONT SIZE=3><SPAN LANG="en-US">Object</SPAN></FONT><FONT SIZE=3>.
+Метод возвращает массив ключей.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_e25080d.png" NAME="Рисунок 16" ALIGN=BOTTOM WIDTH=248 HEIGHT=53 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Либо пробегаем
+по образовавшемуся массиву и выводим
+значение каждого свойства:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_49e5d08f.png" NAME="Рисунок 17" ALIGN=BOTTOM WIDTH=287 HEIGHT=76 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3><SPAN STYLE="background: #ffff00">Замыкания
+в </SPAN></FONT><FONT SIZE=3><SPAN LANG="en-US"><SPAN STYLE="background: #ffff00">JS</SPAN></SPAN></FONT><FONT SIZE=3><SPAN STYLE="background: #ffff00">.</SPAN></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Создадим
+функцию для счётчика. Инициализируем
+счётчик внутри. Вернём новую анонимную
+функцию.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_d8f32abc.png" NAME="Рисунок 18" ALIGN=BOTTOM WIDTH=397 HEIGHT=261 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Получается,
+счётчик замыкается в каждой из функций
+автономно. И пока на функцию что-то
+ссылается, она не уничтожается, а
+существует:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_ac0c295c.png" NAME="Рисунок 19" ALIGN=BOTTOM WIDTH=95 HEIGHT=211 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Для наглядности,
+внутри функцию заменим на объект. А в
+объекте уже будет функция. </FONT>
+</P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_2d559a18.png" NAME="Рисунок 20" ALIGN=BOTTOM WIDTH=262 HEIGHT=249 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Вызываем те
+же функции с методами инкремента и
+декремента:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_30f77142.png" NAME="Рисунок 21" ALIGN=BOTTOM WIDTH=367 HEIGHT=167 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Принцип работы
+будет тот же:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_56dfe7b7.png" NAME="Рисунок 22" ALIGN=BOTTOM WIDTH=155 HEIGHT=67 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=4><SPAN STYLE="background: #ffff00">Что
+такое контекст.</SPAN></FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Создадим
+объект.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_aea50422.png" NAME="Рисунок 23" ALIGN=BOTTOM WIDTH=293 HEIGHT=247 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Будем выводить
+информацию спустя время.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_d701973c.png" NAME="Рисунок 24" ALIGN=BOTTOM WIDTH=271 HEIGHT=247 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_dbc4c5e.png" NAME="Рисунок 25" ALIGN=BOTTOM WIDTH=110 HEIGHT=51 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Всё выводится,
+но без значений. </FONT>
+</P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Здесь потеря
+контекста (со стрелочной функцией такого
+нет, потому что у неё нет своего контекста).</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Для обычной
+функции внутри функции объектом </FONT><FONT SIZE=3><SPAN LANG="en-US">this</SPAN></FONT><FONT SIZE=3>
+будет глобальный объект </FONT><FONT SIZE=3><SPAN LANG="en-US">Window</SPAN></FONT><FONT SIZE=3>:</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_d8628aa4.png" NAME="Рисунок 26" ALIGN=BOTTOM WIDTH=562 HEIGHT=84 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Для </FONT><FONT SIZE=3><SPAN LANG="en-US">setTimeout</SPAN></FONT><FONT SIZE=3>
+своя область видимости – </FONT><FONT SIZE=3><SPAN LANG="en-US">Window</SPAN></FONT><FONT SIZE=3>,
+поэтому когда мы прописываем новый </FONT><FONT SIZE=3><SPAN LANG="en-US">this</SPAN></FONT><FONT SIZE=3>
+внутри его, объектом является именно
+глобальный объект.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>3 способа борьбы
+для потери контекста (один из них –
+стрелочная функция).</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>С помощью
+замыкания. </FONT>
+</P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Создадим внутри
+функции переменную, где будем использовать
+</FONT><FONT SIZE=3><SPAN LANG="en-US">this</SPAN></FONT><FONT SIZE=3>.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Поскольку мы
+присвоили конкретный объект этой
+переменной, то внутри таймаута будем
+обращаться к ней и получать наши значения.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_371a40c2.png" NAME="Рисунок 27" ALIGN=BOTTOM WIDTH=281 HEIGHT=269 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Иначе, используем
+метод функции </FONT><FONT SIZE=3><SPAN LANG="en-US">bind</SPAN></FONT><FONT SIZE=3>(</FONT><FONT SIZE=3><SPAN LANG="en-US">this</SPAN></FONT><FONT SIZE=3>),
+где </FONT><FONT SIZE=3><SPAN LANG="en-US">this</SPAN></FONT><FONT SIZE=3>
+всё ещё тот самый, который нужен.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=4><SPAN STYLE="background: #ffff00">Методы
+для привязки контекста.</SPAN></FONT></P>
+<P LANG="en-US" STYLE="margin-bottom: 0.11in"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>В обычном
+написании функция будет ссылаться на
+</FONT><FONT SIZE=3><SPAN LANG="en-US">Object</SPAN></FONT><FONT SIZE=3>
+глобальный.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3><SPAN LANG="en-US">Bind</SPAN></FONT><FONT SIZE=3>
+первым параметром принимает нужный нам
+контекст.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Возвращает
+новую функцию с привязанным контекстом.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_8d372b7e.png" NAME="Рисунок 28" ALIGN=BOTTOM WIDTH=342 HEIGHT=233 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>Можно вызвать
+другой метод для привязки функции, </FONT><FONT SIZE=3><SPAN LANG="en-US">call</SPAN></FONT><FONT SIZE=3>.
+Он не возвращает функцию, он её вызывает.
+Первый параметр – контекст вызова,
+второй – аргумент (-ы) функции. Если их
+много – через запятую.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_7a5ebb62.png" NAME="Рисунок 29" ALIGN=BOTTOM WIDTH=296 HEIGHT=30 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><FONT SIZE=3>3 вариант –
+метод </FONT><FONT SIZE=3><SPAN LANG="en-US">apply</SPAN></FONT><FONT SIZE=3>.
+Первый параметр – контекст, второй –
+аргументы в массиве.</FONT></P>
+<P STYLE="margin-bottom: 0.11in"><IMG SRC="5432fca9cff0c44b74b66b0a8dbe1996_html_b3f448a4.png" NAME="Рисунок 30" ALIGN=BOTTOM WIDTH=301 HEIGHT=25 BORDER=0></P>
+<P STYLE="margin-bottom: 0.11in"><BR><BR>
+</P>
+</BODY>
+</HTML>
