@@ -10,7 +10,7 @@ console.log('...')
 setTimeout(function() {
     console.log('Сервер: запрашиваю список пользователей в БД')
     console.log('...')
-
+///колбеки функции
     setTimeout(function() {
         console.log('БД: формирую список пользователей')
         console.log('...')
