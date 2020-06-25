@@ -8,5 +8,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="mustard-ui" level="application" />
+    <orderEntry type="library" name="fontawesome" level="application" />
+    <orderEntry type="library" name="solid" level="application" />
+    <orderEntry type="library" name="normalize" level="application" />
   </component>
 </module>

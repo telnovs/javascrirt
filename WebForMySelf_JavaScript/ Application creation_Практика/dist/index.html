@@ -29,13 +29,19 @@
         </div>
     </div>
     <form id="create"><h1 class="h4">Создать новый пост</h1>
-        <div class="form-control"><label>Название</label> <input name="title" placeholder="Введите название"></div>
-        <div class="form-control"><label>Текст</label> <textarea name="fulltext"
-                                                                 placeholder="Введите текст поста"></textarea></div>
-        <div class="form-control"><label>Тип</label> <select name="type">
-            <option value="note" selected="selected">Заметка</option>
-            <option value="news">Новость</option>
-        </select></div>
+        <div class="form-control"><label>Название</label> <label>
+            <input name="title" placeholder="Введите название">
+        </label></div>
+        <div class="form-control"><label>Текст</label> <label>
+<textarea name="fulltext"
+                                                         placeholder="Введите текст поста"></textarea>
+        </label></div>
+        <div class="form-control"><label>Тип</label> <label>
+            <select name="type">
+                <option value="note" selected="selected">Заметка</option>
+                <option value="news">Новость</option>
+            </select>
+        </label></div>
         <button class="button-primary button-round button-shadow" type="submit">Создать</button>
     </form>
     <div id="posts">

@@ -1,10 +1,10 @@
-
 {
- "presets" : [
-        ["@babel/preset-env",{
-          "targets": [
-            "last 5 versions"
-          ]
-        }]
-     ]
+  "presents": [
+    "@babel/preset-evn",
+    {
+      "targets": [
+        "last 5 versions"
+      ]
+    }
+  ]
 }
