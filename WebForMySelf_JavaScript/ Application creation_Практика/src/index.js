@@ -1,4 +1,9 @@
 import {HeaderComponent} from "./components/header.component"
+import {NavigationComponent} from './components/navigation.component'
 
-const header = new HeaderComponent('header')
-console.log(header)
+
+
+
+new HeaderComponent('header')
+// переменная с создаем поного класса для навигации
+const navigation = new NavigationComponent('navigation')
