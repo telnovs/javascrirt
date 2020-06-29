@@ -20,7 +20,7 @@ export class CreateComponent extends Component {
       //  в массиве мы укажем валидаторы которые необходими применить к текущим контролам
       //делаем проверку с помощью класса Validators ссылаемся на него. а не делаем вызов
       title :[Valodators.required],
-      fulltext : [Valodators.required]
+      fulltext : [Valodators.required,Validators.minLength(10)]
     })
   }
 }
@@ -36,6 +36,9 @@ export class CreateComponent extends Component {
         ///делаем спред оператор
         ...this.from.value()
       }
+      console.log('Submit',formData)
+    }else {
+      console.log('Form is invalide')
     }
 
   }

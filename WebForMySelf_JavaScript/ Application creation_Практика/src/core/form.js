@@ -30,6 +30,7 @@ export class Form {
                 isValid = validator(this.form[control]) && isValid
 
             })
+            isFormValid = isFormValid && isValid
         })
 
         return isFormValid
