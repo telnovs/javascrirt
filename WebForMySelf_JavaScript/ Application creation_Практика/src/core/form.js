@@ -15,4 +15,23 @@ export class Form {
             })
         return value
     }
+    //данныый метод возвращаяет булеан значение
+    isValid(){
+        let isFormValid = true
+
+        Object.keys(this.controls).forEach(control =>{
+            //получаем список валидаторов
+            const validators = this.controls[control]
+            // непосредственно для конртетного валидатора
+           let isValid = true
+            // пробегаемся по массиву где каждая функцией валидатором
+            validators.forEach(validator=>{
+                //проверяем валидны ли текущий control
+                isValid = validator(this.form[control]) && isValid
+
+            })
+        })
+
+        return isFormValid
+    }
 }
