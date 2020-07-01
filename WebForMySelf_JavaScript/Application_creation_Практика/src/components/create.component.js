@@ -26,7 +26,7 @@ export class CreateComponent extends Component {
     })
   }
 }
-  // cоздаем функию
+  // cоздаем функию submitHandler
 
 async  function submitHandler(event){
     // отменяем дефотное поведение

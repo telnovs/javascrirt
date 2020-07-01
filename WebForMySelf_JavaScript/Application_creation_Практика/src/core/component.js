@@ -9,13 +9,18 @@ export  class Component {
      // создаем пустой метод
     init(){}
 
+    onHide(){}
+
+    onShow(){}
     // Метод для скрытия
     hide(){
         this.$el.classList.add('hide')
+        this.onHide()
     }
     // Метод для показа
     show(){
         this.$el.classList.remove('hide')
+        this.onShow()
     }
 }
 
