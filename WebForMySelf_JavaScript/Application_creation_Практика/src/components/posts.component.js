@@ -3,15 +3,20 @@ import {apiService} from '../services/api.service'
 import {TransformService} from '../services/Transform.service.js'
 
 export class PostsComponent extends Component {
-  constructor(id) {
+  constructor(id,{loader}) {
     super(id)
+    this.loader = loader
   }
   async onShow(){
-   const fbdata = await apiService.fetchPosts()
+    //показываем загрузку
+    this.loader.show()
+    const fbdata = await apiService.fetchPosts()
     // для вывода обьетка с сервеса
     const posts = TransformService.fbObjectToArray(fbdata)
     //для вывода поста
     const html =posts.map(post =>renderPost(post))
+    // скрываем загрузку после получения постов
+    this.loader.hide()
     this.$el.insertAdjacentHTML('afterbegin',html.join(' '))
   }
   //очищаем html  когда уходим с данной компаненты с помощью метода onHide
