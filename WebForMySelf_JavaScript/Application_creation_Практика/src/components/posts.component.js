@@ -2,6 +2,7 @@ import { Component } from '../core/component'
 import {apiService} from '../services/api.service'
 import {TransformService} from '../services/Transform.service.js'
 
+
 export class PostsComponent extends Component {
   constructor(id,{loader}) {
     super(id)
@@ -20,7 +21,7 @@ export class PostsComponent extends Component {
     // для вывода обьетка с сервеса
     const posts = TransformService.fbObjectToArray(fbdata)
     //для вывода поста
-    const html =posts.map(post =>renderPost(post))
+    const html =posts.map(post =>renderPost(post,{withButton:true}))
     // скрываем загрузку после получения постов
     this.loader.hide()
     this.$el.insertAdjacentHTML('afterbegin',html.join(' '))
