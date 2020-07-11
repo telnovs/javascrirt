@@ -30,7 +30,9 @@ app.post('/', async (req,res) =>{
     //получение значения инпута
     const { city } = req.body
     //вызываем функцию
-    const {weather,error} = await weatherRequest(city)
+    const {weather, error} = await weatherRequest(city)
+    console.log('Weather', weather)
+    console.log('Error', error)
     // возвращаем туже страеицу но с изменнемыми параметрами
     res.render('index')
 })
