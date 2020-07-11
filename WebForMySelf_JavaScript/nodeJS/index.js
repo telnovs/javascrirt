@@ -2,9 +2,12 @@
 const express = require('express')
 // подключаем body-parser
 const bodyParser = require('body-parser')
+//импортируем weather.request
+const weatherRequest = require('./requests/weather.request.js')
 
 //создаем переменную которая отвечает за все приложение
 const app = express()
+//68c7ceef5d69db54f7fdccb4943162b6
 //говорим что по умолчанию у нас идут файлы ejs
 app.set('view engine','ejs')
 
@@ -26,8 +29,8 @@ app.get('/',(req, res) => {
 app.post('/',(request,response) =>{
     //получение значения инпута
     const { city } = request.body
-
-    console.log(city)
+    //вызываем функцию
+    weatherRequest(city)
     // возвращаем туже страеицу но с изменнемыми параметрами
     response.render('index')
 })
