@@ -7,7 +7,7 @@ const weatherRequest = require('./requests/weather.request.js')
 
 //создаем переменную которая отвечает за все приложение
 const app = express()
-//68c7ceef5d69db54f7fdccb4943162b6
+
 //говорим что по умолчанию у нас идут файлы ejs
 app.set('view engine','ejs')
 
@@ -26,13 +26,13 @@ app.get('/',(req, res) => {
 //обработка POST запроса
 //request - отвечает за то что мы отправляем(обращаемся) в данном запросе
 //response - отвечает за то что мы отвечаем на данный зарпрос
-app.post('/',(request,response) =>{
+app.post('/',async (req,res) =>{
     //получение значения инпута
-    const { city } = request.body
+    const { city } = req.body
     //вызываем функцию
-    weatherRequest(city)
+    const {weather,error} = await weatherRequest(city)
     // возвращаем туже страеицу но с изменнемыми параметрами
-    response.render('index')
+    res.render('index')
 })
 
 //создаем функцию  listen где первый значением передаем порт на котором слушать приложение
