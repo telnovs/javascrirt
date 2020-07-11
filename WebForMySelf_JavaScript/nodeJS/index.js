@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 // index с раширением ejs
 app.get('/',(req, res) => {
 
-    res.render('index')
+    res.render('index',{weather: null, error: null})
 })
 
 //обработка POST запроса
@@ -34,7 +34,7 @@ app.post('/', async (req,res) =>{
     console.log('Weather', weather)
     console.log('Error', error)
     // возвращаем туже страеицу но с изменнемыми параметрами
-    res.render('index')
+    res.render('index',{ weather, error})
 })
 
 //создаем функцию  listen где первый значением передаем порт на котором слушать приложение
