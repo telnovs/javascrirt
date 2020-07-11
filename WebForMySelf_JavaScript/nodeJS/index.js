@@ -3,7 +3,7 @@ const express = require('express')
 // подключаем body-parser
 const bodyParser = require('body-parser')
 //импортируем weather.request
-const weatherRequest = require('./requests/weather.request.js')
+const weatherRequest = require('./requests/weather.request')
 
 //создаем переменную которая отвечает за все приложение
 const app = express()
@@ -26,7 +26,7 @@ app.get('/',(req, res) => {
 //обработка POST запроса
 //request - отвечает за то что мы отправляем(обращаемся) в данном запросе
 //response - отвечает за то что мы отвечаем на данный зарпрос
-app.post('/',async (req,res) =>{
+app.post('/', async (req,res) =>{
     //получение значения инпута
     const { city } = req.body
     //вызываем функцию
@@ -37,6 +37,6 @@ app.post('/',async (req,res) =>{
 
 //создаем функцию  listen где первый значением передаем порт на котором слушать приложение
 // вторым праметром передаем коллбек функцию
-app.listen(3000, () => {
+app.listen(3300, () => {
     console.log('Server has started on port 3000 ')
 } )

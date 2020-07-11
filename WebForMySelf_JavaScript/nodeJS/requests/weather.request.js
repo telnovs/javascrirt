@@ -5,7 +5,7 @@ const requestPromise = require('request-promise')
 module.exports = async function( city= '' ) {
     if (!city){
         // создаем ошибку если не ввели название города
-        throw new Error( 'Ввидете город')
+        throw new Error( 'Введете город')
     }
 
     const KEY = '68c7ceef5d69db54f7fdccb4943162b6'
@@ -34,12 +34,10 @@ module.exports = async function( city= '' ) {
             error: null
         }
     }catch(error){
-        console.log(error)
         // при ошибке возващаем сообшение об ошибке
         return{
             weather: null,
             error: error.error.message
         }
     }
-
 }
