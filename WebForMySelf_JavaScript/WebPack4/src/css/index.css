@@ -1,0 +1,16 @@
+@import "header.css"; /* подключаем css header */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box{
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+    min-height: 200px;
+    border: 1px solid #BD3F32 ;
+    margin-top: 10px;
+}

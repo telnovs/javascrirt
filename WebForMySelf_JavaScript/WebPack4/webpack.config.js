@@ -18,5 +18,14 @@ module.exports = {
             /* берем за основу html файл для обработки этого файла*/
             template: './src/index.html'
         })
-    ]
+    ],
+    /* подключаем css loader*/
+    module: {
+        rules:[
+            {   /* говорим что ко всем файлам css применять css-loader */
+                test:/\.css$/,
+                use:[ 'style-loader','css-loader']
+            }
+        ]
+    }
 }
