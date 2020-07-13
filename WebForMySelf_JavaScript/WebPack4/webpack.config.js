@@ -6,7 +6,7 @@ const HTMLPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 /* Подключаем optimize-css-assets-webpack-plugin*/
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',  /*входной файл*/
@@ -17,7 +17,7 @@ module.exports = {
     optimization:{
         minimizer:[
             new OptimizeCssAssetsPlugin({}),
-            // new UglifyJsPlugin({})
+            new UglifyJsPlugin({})
         ]
     },
     /*Подключаем devServer */
@@ -45,6 +45,12 @@ module.exports = {
                 test:/\.css$/,
                 /* Подключаем плаген mini-css-extract-plugin */
                 use:[ MiniCssExtractPlugin.loader,'css-loader']
+            },
+            /* подключаем babel loader */
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader"
             }
         ]
     }
