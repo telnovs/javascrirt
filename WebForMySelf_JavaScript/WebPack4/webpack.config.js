@@ -38,6 +38,11 @@ module.exports = {
             filename: 'style.css'
         })
     ],
+    // какие тыпы файлов мы можем не прописывать когда пишем импорты
+    resolve: {
+        extensions : [ '.js', '.ts']
+    },
+
     /* подключаем css loader*/
     module: {
         rules:[
@@ -56,7 +61,7 @@ module.exports = {
             },
             /* подключаем babel loader */
             {
-                test: /\.js$/,
+                test: /\.(js|ts)$/,
                 exclude: /node_modules/,
                 loader: "babel-loader"
             }
