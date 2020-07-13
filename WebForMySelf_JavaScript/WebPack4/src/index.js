@@ -3,6 +3,7 @@ import AppService from './modules/app.service' // прередаем класс 
 import  './modules/heared.component'// импортируем фиал без эксорта
 import './css/index.css' // подключаем css
 import './less/index.less' // подключаем less
+import './scss/index.scss' // подключаем sass
 
 
 console.log('Config key:', config.key)
