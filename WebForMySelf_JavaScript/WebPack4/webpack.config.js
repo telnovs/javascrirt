@@ -6,19 +6,24 @@ const HTMLPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 /* Подключаем optimize-css-assets-webpack-plugin*/
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',  /*входной файл*/
     output: { /*выходной фаил из webpack*/
         filename: 'bundle.js', /* название файла , обычно bundle.js*/
-        path: path.resolve(__dirname, 'dist')/* указываем путь */
+        path: path.resolve( __dirname, 'dist')/* указываем путь */
     },
     optimization:{
         minimizer:[
             new OptimizeCssAssetsPlugin({}),
             // new UglifyJsPlugin({})
         ]
+    },
+    /*Подключаем devServer */
+    devServer: {
+        contentBase: path.resolve( __dirname, 'dist'),/* указываем путь */
+        port: 4200 /*запускается тут локальный сервер*/
     },
     /* Подключаем плаген путем создание массива */
     plugins:[
