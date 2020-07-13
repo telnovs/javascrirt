@@ -46,6 +46,10 @@ module.exports = {
                 /* Подключаем плаген mini-css-extract-plugin */
                 use:[ MiniCssExtractPlugin.loader,'css-loader']
             },
+            {
+                test:/\.less$/,
+                use:[ MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+            },
             /* подключаем babel loader */
             {
                 test: /\.js$/,
