@@ -49,3 +49,4 @@ console.log(ruUrl('google'))
 console.log(ruUrl('yandex'))
 
 
+console.log(comUrl(''))
