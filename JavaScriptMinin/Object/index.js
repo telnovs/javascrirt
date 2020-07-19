@@ -7,8 +7,8 @@ const person = Object.create ({
 
 	calculateAge(){
 		console.log('Age:',new Data().getFullYear()- this.birdYear
-	 	},)
-	}
+	 	)}
+	
 }, {
 	 name: { // поле тут являеться обьектом  
 	 	value: 'Mark',  // ключ создаестья  через value
@@ -42,9 +42,9 @@ const person = Object.create ({
 
 // person.name = "Blad"
 
-for (let key in person
+for (let key in person){
 	//добовляем проверку если у обькта person
-	if (person.hesOwProperty(key)){
+	if (person.hasOwnProperty(key)){
 		console.log('key:', key , person[key])// что бы получить значения ключа необходимо написать person[key] 
 	}
-	
+}	
