@@ -28,33 +28,72 @@ const data = withHiddenProps({
   _uid: '1231231' // это поле мы хотим скрыть
 })
 
-// // Optimization
-// const IndexedArray = new Proxy(Array, {
-//   construct(target, [args]) {
-//     const index = {}
-//     args.forEach(item => (index[item.id] = item))
 
-//     return new Proxy(new target(...args), {
-//       get(arr, prop) {
-//         switch (prop) {
-//           case 'push':
-//             return item => {
-//               index[item.id] = item
-//               arr[prop].call(arr, item)
-//             }
-//           case 'findById':
-//             return id => index[id]
-//           default:
-//             return arr[prop]
-//         }
-//       }
-//     })
-//   }
-// })
 
-// const users = new IndexedArray([
-//   { id: 11, name: 'Vladilen', job: 'Fullstack', age: 25 },
-//   { id: 22, name: 'Elena', job: 'Student', age: 22 },
-//   { id: 33, name: 'Victor', job: 'Backend', age: 23 },
-//   { id: 44, name: 'Vasilisa', job: 'Teacher', age: 24 }
-// ])
+// optimization
+// массив 
+const userData = [
+  { id: 1, name: 'Vladilen', job: 'Fullstack', age: 25 },
+  { id: 2, name: 'Elena', job: 'Student', age: 22 },
+  { id: 3, name: 'Victor', job: 'Backend', age: 23 },
+  { id: 4, name: 'Vasilisa', job: 'Teacher', age: 24 }
+]
+
+// поиск ключей массива 
+const index1 = {}
+userData.forEach(i => index1[i.id] = i)
+
+
+///реализуем поиск через Proxy
+
+// создаем класс 
+const IndexArray = new Proxy(Array, {
+	construct(target, [args]){// ставит ловушку на мемент когда мы оброщаемся через ключевое слово new
+		// создаем пустой обькт 
+			const index = {}
+			// походимся по всему массиву. на каждой операции получаем некоторый item и 
+			//в переменную index по ключу item.id заносим значением item
+			args.forEach(item => (index[item.id] = item))	
+
+		return new Proxy( new target(...args), {
+			// создаем ловушку на метод get( это когда мы обращаемся к какомо то свойству) 
+			// она получает обьект  и некоторое свойство prop
+			get(arr, prop){
+				switch(prop){
+					// оброщаемся к методу push
+					case 'push': return item => {
+						index[item.id] = item
+						arr[prop].call(arr, item)
+					}
+					case 'findById': return id => index[id] 
+
+					// если не один кейс не сработал возвращаем свойство к которому мы обращались
+					default:
+					 return arr[prop]
+				}
+			}
+		})
+	}
+})
+
+
+const users = new IndexArray([
+  { id: 11, name: 'Vladilen', job: 'Fullstack', age: 25 },
+  { id: 22, name: 'Elena', job: 'Student', age: 22 },
+  { id: 33, name: 'Victor', job: 'Backend', age: 23 },
+  { id: 44, name: 'Vasilisa', job: 'Teacher', age: 24 }
+])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
