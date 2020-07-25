@@ -77,3 +77,50 @@ const people = [
 // console.log(adults)
 
 
+/********************** Reduce ************************/
+
+// let amount = 0 
+
+// for (let i = 0; i < people.length; i++){
+// 	amount +=people[i].budget
+// }
+
+
+// const amount = people.reduce((total, person) => total + person.budget , 0)
+
+// console.log(amount)
+
+
+
+
+
+/********************* Find ************************/
+
+// const Victor = people.find(person => person.name === 'Victor')
+
+// console.log(Victor)
+
+
+
+/********************* findIndex ************************/
+
+
+
+// const Victorindex = people.findIndex(person => person.name === 'Victor')
+
+// console.log(Victorindex)
+
+/******************************* Пример *************************************/
+
+const amount = people
+	.filter(person =>person.budget >2000)
+	.map(person =>{
+		return{
+			info: `${person.name}  ($){person.age})`,
+			budget: person.budget
+		}
+	})
+	.reduce((total, person) => total + person.budget, 0)
+
+
+console.log(amount)
