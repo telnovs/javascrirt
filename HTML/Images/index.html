@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Basics</title>
+</head>
+<body>
+<!--Тег <img> предназначен для отображения на веб-странице изображений в графическом формате GIF,
+    JPEG или PNG.
+    Адрес файла с картинкой задаётся через атрибут src.
+    Если необходимо, то рисунок можно сделать ссылкой на другой файл, поместив тег <img> в контейнер <a>.
+    При этом вокруг изображения отображается рамка, которую можно убрать,
+    добавив атрибут border="0" в тег <img>.
+    -->
+<!-- Simple image -->
+<img src="https://picsum.photos/300/300" alt="Just image">
+<!--HTML-элемент <picture> служит контейнером для одного или более элементов <source> и
+    одного элемента <img> для обеспечения оптимальной версии изображения для различных размеров экрана.
+    Браузер рассмотрит каждый из дочерних элементов  <source> и выберет один,
+    соответствующий лучшему совпадению; если совпадений среди элементов <source> найдено не будет,
+    то будет выбран файл, указанный  атрибутом  src элемента <img> .
+    Затем выбранное изображение отображается в пространстве, занятом элементом <img>.
+
+    Чтобы выбрать оптимальное изображение, user agent  анализирует атрибуты srcset, media, и
+    type элемента <source> и выбирает совместимое изображение,
+    которое наилучшим образом соответствует текущему макету страницы,
+    характеристикам устройства отображения и т. д-->
+<!-- Responsive image -->
+<picture>
+    <source media="(min-width: 1024px)" srcset="https://picsum.photos/600/600">
+    <source media="(min-width: 768px)" srcset="https://picsum.photos/300/300">
+    <source media="(min-width: 360px)" srcset="https://picsum.photos/100/100">
+    <img src="https://picsum.photos/300/300" alt="Just image">
+</picture>
+<!--<figure> Используется для группирования любых элементов, например, изображений и подписей к ним-->
+<!-- Image with semantic description -->
+<figure>
+    <img src="https://picsum.photos/300/300" alt="Just image" />
+    <figcaption>It is a simple description for a picture above</figcaption>
+</figure>
+
+<!-- Images with semantic description -->
+<figure>
+    <img src="https://picsum.photos/300/300" alt="Just image" />
+    <img src="https://picsum.photos/300/300" alt="Just image" />
+    <img src="https://picsum.photos/300/300" alt="Just image" />
+    <figcaption>
+        <p>It is a simple description for a couple pictures above.It is a simple description for a couple pictures above.It is a simple description for a couple pictures above</p>
+    </figcaption>
+</figure>
+
+</body>
+</html>
